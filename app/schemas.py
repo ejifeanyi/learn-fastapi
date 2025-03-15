@@ -11,3 +11,12 @@ class TodoCreate(BaseModel):
 # Schema for returning a Todo (includes id)
 class Todo(TodoCreate):
     id: int
+
+
+class UserCreate(BaseModel):
+    name: str
+    password: str
+
+
+class User(UserCreate):
+    id: int
