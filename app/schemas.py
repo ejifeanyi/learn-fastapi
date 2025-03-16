@@ -13,10 +13,21 @@ class Todo(TodoCreate):
     id: int
 
 
-class UserCreate(BaseModel):
-    name: str
+class User(BaseModel):
+    username: str
     password: str
 
 
-class User(UserCreate):
-    id: int
+class UserCreate(BaseModel):
+    username: str
+    password: str
+
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
