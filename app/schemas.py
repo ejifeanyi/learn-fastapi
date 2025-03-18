@@ -31,3 +31,12 @@ class UserLogin(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+
+class Shorten_url(BaseModel):
+    url: str
+
+class Original_url(BaseModel):
+    url: str
+class Url(BaseModel):
+    shorten_url: str
+    original_url: str

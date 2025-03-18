@@ -13,9 +13,13 @@ todos = [
 
 
 @router.get("/todos", response_model=list[Todo])
-def get_todos():
-    # return all todos
-    return todos
+def get_todos(completed: bool | None = None):
+    # return all todos if completed is None
+    # return todos based on completed
+
+    if completed is None:
+        return todos
+    return [todo for todo in todos if todo.completed == completed]
 
 
 @router.get("/todos/{todo_id}")
